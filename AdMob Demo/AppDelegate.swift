@@ -5,6 +5,7 @@
 //  Created by unthinkable-mac-0025 on 03/08/21.
 //
 
+import GoogleMobileAds
 import UIKit
 
 @main
@@ -14,6 +15,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //instantiate the Google ads
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+        GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ kGADSimulatorID ]
+        
         return true
     }
 
